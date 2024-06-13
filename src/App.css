@@ -1,0 +1,10 @@
+/* src/App.css */
+.App {
+    display: contents;
+  }
+  
+  .map-container {
+    flex: 1;
+    height: 100vh;
+  }
+  
