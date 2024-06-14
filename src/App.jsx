@@ -3,6 +3,7 @@
 import Sidebar from './components/Sidebar';
 import MapComponent from './components/MapComponent';
 import './App.css';
+import EarthquakeList from './components/EarthquakeList';
 
 
 function App() {
@@ -12,6 +13,7 @@ function App() {
     <div className="App" style={{ display: 'flex' }}>
     <Sidebar />
     <MapComponent />
+    <EarthquakeList/>
   </div>
 
   )
