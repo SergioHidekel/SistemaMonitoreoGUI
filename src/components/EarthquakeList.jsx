@@ -16,7 +16,7 @@ const EarthquakeList = () => {
         const response = await axios.get('https://earthquake.usgs.gov/fdsnws/event/1/query', {
           params: {
             format: 'geojson',
-            starttime: '2023-06-01',
+            starttime: '2019-06-01',
             endtime: '2023-06-30',
             minmagnitude: 5,
             minlatitude: 14,
