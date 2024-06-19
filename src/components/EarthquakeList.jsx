@@ -49,7 +49,7 @@ const EarthquakeList = () => {
   }
 
   return (
-    <div className="earthquake-container position-fixed bottom-0  border bg-light" style={{ width: '300px', height: '400px' }}>
+    <div className="earthquake-container position-fixed bottom-0  border bg-light" style={{ width: '280px', height: '400px' }}>
       <h2 className="mb-4">Sistema Sismologico de Mexico</h2>
       <ListGroup>
         {earthquakes.map((earthquake) => (

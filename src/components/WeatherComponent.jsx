@@ -14,14 +14,14 @@ const WeatherComponent = () => {
       hourly: ["temperature_2m", "precipitation", "snowfall"]
     },
     {
-      latitude: 40.7128,
-      longitude: -74.0060,
+      latitude: 19.1783588,
+      longitude: -98.6530277,
       current: "snowfall",
       hourly: ["temperature_2m", "precipitation", "snowfall"]
     },
     {
-      latitude: 34.0522,
-      longitude: -118.2437,
+      latitude: 19.0304015,
+      longitude: -97.2783758,
       current: "snowfall",
       hourly: ["temperature_2m", "precipitation", "snowfall"]
     },
@@ -117,12 +117,12 @@ const WeatherComponent = () => {
           return (
             <div className="card mb-4" key={index}>
               <div className="card-body">
-                <h1 className="card-title">Weather Data for Location {index + 1}</h1>
-                <p className="card-text">Latitude: {data.location.latitude}</p>
-                <p className="card-text">Longitude: {data.location.longitude}</p>
-                <p className="card-text">Current Time: {data.current.time.toISOString()}</p>
-                <p className="card-text">Snowfall: {data.current.snowfall}</p>
-                <h2 className="mt-4">Hourly Weather</h2>
+                <h1 className="card-title">Comportamiento climatico zona:  {index + 1}</h1>
+                <p className="card-text">Latitud: {data.location.latitude}</p>
+                <p className="card-text">Longitud: {data.location.longitude}</p>
+                <p className="card-text">Tiempo Actual: {data.current.time.toISOString()}</p>
+                <p className="card-text">Nevadas: {data.current.snowfall}</p>
+                <h2 className="mt-4">Histograma</h2>
                 <Line data={chartData} options={options} />
               </div>
             </div>

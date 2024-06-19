@@ -4,6 +4,7 @@ import { BrowserRouter as Router,  Route, Link, Switch } from 'react-router-dom'
 //import WeatherComponent from './WeatherComponent';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
+//import EarthquakeList from './EarthquakeList';
 
 
 
@@ -21,7 +22,7 @@ const Sidebar = () => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-        <Link to="/" className="nav-link active" aria-current="page">
+        <Link to="/" className="nav-link text-white" aria-current="page">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="./MapComponent.jsx" />
               </svg>
@@ -29,7 +30,7 @@ const Sidebar = () => {
         </Link>
           </li>   
           <li>
-            <Link to="/dashboard" className="nav-link text-white">
+        <Link to="/dashboard" className="nav-link text-white">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="./WeatherComponent.jsx" />
               </svg>
@@ -61,10 +62,10 @@ const Sidebar = () => {
             </a>
           </li>
         </ul>
-        <hr />x
+        <hr />
         <div className="dropdown">
           <a href="#" className="d-flex align-items-center text-white text-decoration-none dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
-            <img src="https://github.com/mdo.png" alt="" width="32" height="32" className="rounded-circle me-2" />
+            <img src="https://seeklogo.com/images/U/upiita-logo-F3DFC7ADFD-seeklogo.com.png" alt="" width="32" height="32" className="rounded-circle me-2" />
             <strong>mdo</strong>
           </a>
 

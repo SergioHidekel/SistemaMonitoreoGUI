@@ -15,7 +15,7 @@ L.Icon.Default.mergeOptions({
 
 const WeatherMapComponent = () => {
   const [markers, setMarkers] = useState([
-    { position: [19.020921, -98.626786], popup: "Loading..." },
+    { position: [19.020921, -98.626786], popup: "Loading...", },
     { position: [19.1783588,-98.6530277], popup: "Loading..." },
     { position: [19.0304015,-97.2783758], popup: "Loading..." },
     { position: [19.001735, -98.202897]}
@@ -39,7 +39,7 @@ const WeatherMapComponent = () => {
   const position = [19.001735, -98.202897];
 
   return (
-    <MapContainer center={position} zoom={13} style={{ height: "100vh", width: "100%" }}>
+    <MapContainer center={position} zoom={10} style={{ height: "100vh", width: "100%" }}>
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
