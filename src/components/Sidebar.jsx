@@ -4,6 +4,7 @@ import { BrowserRouter as Router,  Route, Link, Switch } from 'react-router-dom'
 //import WeatherComponent from './WeatherComponent';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
+import WeatherMap from './WeatherMap'
 //import EarthquakeList from './EarthquakeList';
 
 
@@ -54,12 +55,12 @@ const Sidebar = () => {
             </a>
           </li>
           <li>
-            <a href="#" className="nav-link text-white">
+            <Link to='/customers' className="nav-link text-white">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#people-circle" />
               </svg>
               Customers
-            </a>
+            </Link>
           </li>
         </ul>
         <hr />
@@ -73,6 +74,9 @@ const Sidebar = () => {
       </div>
 
       <Switch>
+      <Route path='/customers'>
+          <WeatherMap/>
+        </Route>
         <Route path='/dashboard'>
           <WeatherComponent/>
         </Route>

@@ -20,6 +20,7 @@
     "cdbreact": "^1.5.19",
     "chart.js": "^4.4.3",
     "history": "^4.10.1",
+    "html2canvas": "^1.4.1",
     "leaflet": "^1.9.4",
     "leaflet-defaulticon-compatibility": "^0.1.2",
     "leaflet.heat": "^0.2.0",
