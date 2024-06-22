@@ -1,7 +1,5 @@
-import  { useState, useEffect } from 'react';
-import {MapContainer, TileLayer, Marker, Popup, Polygon  } from 'react-leaflet'
-import 'leaflet/dist/leaflet.css';
-//import Markers from './Markers';
+import { useState, useEffect } from 'react';
+import { MapContainer, TileLayer, Marker, Popup, Polygon } from 'react-leaflet';
 import 'leaflet/dist/leaflet.css';
 import L from 'leaflet';
 import axios from 'axios';
@@ -14,18 +12,15 @@ L.Icon.Default.mergeOptions({
 });
 
 const WeatherMap = () => {
-
   const [markers, setMarkers] = useState([
-    { position: [19.020921, -98.626786], popup: "Loading...", },
-    { position: [19.1783588,-98.6530277], popup: "Loading..." },
-    { position: [19.0304015,-97.2783758], popup: "Loading..." },
-    { position: [19.001735, -98.202897]}
+    { position: [19.020921, -98.626786], popup: "Loading..." },
+    { position: [19.1783588, -98.6530277], popup: "Loading..." },
+    { position: [19.0304015, -97.2783758], popup: "Loading..." },
+    { position: [19.001735, -98.202897], popup: "Loading..." }
   ]);
-
   const [earthquakeData, setEarthquakeData] = useState(null);
-const [showPopup, setShowPopup] = useState(false);
-const [popupPosition, setPopupPosition] = useState([0, 0]);
-
+  const [showPopup, setShowPopup] = useState(false);
+  const [popupPosition, setPopupPosition] = useState([0, 0]);
 
   const apiKey = '9cb0b15cbe8a509a5b050bde27f68b9f'; // Reemplaza con tu API Key de OpenWeatherMap
 
@@ -34,7 +29,7 @@ const [popupPosition, setPopupPosition] = useState([0, 0]);
       const updatedMarkers = await Promise.all(markers.map(async (marker) => {
         const response = await axios.get(`https://api.openweathermap.org/data/2.5/weather?lat=${marker.position[0]}&lon=${marker.position[1]}&units=metric&appid=${apiKey}`);
         const temperature = response.data.main.temp;
-        return { ...marker, popup: `Temperature: ${temperature}°C`   };
+        return { ...marker, popup: `Temperature: ${temperature}°C` };
       }));
       setMarkers(updatedMarkers);
     };
@@ -44,16 +39,18 @@ const [popupPosition, setPopupPosition] = useState([0, 0]);
 
   const position = [19.001735, -98.202897];
 
-  const mapBounds = [
-    [18.500000, -99.000000], // Suroeste
-    [19.500000, -97.000000]  // Noreste
-  ];
-
+  // Define las coordenadas de la geocerca (polígono)
   const geofenceCoordinates = [
     [19.200000, -98.800000],
     [19.200000, -97.000000],
     [18.800000, -97.000000],
     [18.800000, -98.800000],
+  ];
+
+  // Define los límites del mapa
+  const mapBounds = [
+    [18.500000, -99.000000], // Suroeste
+    [19.500000, -97.000000]  // Noreste
   ];
 
   const handlePolygonClick = async (event) => {
@@ -77,17 +74,22 @@ const [popupPosition, setPopupPosition] = useState([0, 0]);
   };
 
   return (
-    <MapContainer center={position} zoom={13} style={{ height: "100vh", width: "100%" }} bounds={mapBounds}>
+    <MapContainer 
+      center={position} 
+      zoom={10} 
+      style={{ height: "100vh", width: "100%" }}
+      bounds={mapBounds}
+    >
       <TileLayer
         url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
         attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
       />
-       {markers.map((marker, index) => (
+      {markers.map((marker, index) => (
         <Marker key={index} position={marker.position}>
           <Popup>{marker.popup}</Popup>
         </Marker>
       ))}
-            <Polygon 
+      <Polygon 
         positions={geofenceCoordinates} 
         color="blue" 
         eventHandlers={{
@@ -97,7 +99,7 @@ const [popupPosition, setPopupPosition] = useState([0, 0]);
       {showPopup && (
         <Popup position={popupPosition} onClose={() => setShowPopup(false)}>
           <div>
-            <h4>Earthquake Data</h4>
+            <h4>Información Sismológica</h4>
             {earthquakeData && earthquakeData.length > 0 ? (
               <ul>
                 {earthquakeData.map((quake, index) => (
@@ -107,12 +109,13 @@ const [popupPosition, setPopupPosition] = useState([0, 0]);
                 ))}
               </ul>
             ) : (
-              <p>No earthquakes found in this area.</p>
+              <p>
+              No se encontró información en esta área.
+              </p>
             )}
           </div>
         </Popup>
-      )}
-
+      )};
     </MapContainer>
   );
 };
