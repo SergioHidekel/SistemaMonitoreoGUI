@@ -97,7 +97,7 @@ const [popupPosition, setPopupPosition] = useState([0, 0]);
       {showPopup && (
         <Popup position={popupPosition} onClose={() => setShowPopup(false)}>
           <div>
-            <h4>Earthquake Data</h4>
+            <h4>Histórico sismológico.</h4>
             {earthquakeData && earthquakeData.length > 0 ? (
               <ul>
                 {earthquakeData.map((quake, index) => (
