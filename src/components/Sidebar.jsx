@@ -1,12 +1,10 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
-//import { useState } from 'react';
 import { BrowserRouter as Router,  Route, Link, Switch } from 'react-router-dom';
-//import WeatherComponent from './WeatherComponent';
 import MapComponent from './MapComponent';
 import WeatherComponent from './WeatherComponent';
 import WeatherMap from './WeatherMap'
 import WeatherTable from './WeatherTable'
-//import EarthquakeList from './EarthquakeList';
+import EarthquakeMap from './EarthquakeMap'
 
 
 
@@ -48,12 +46,12 @@ const Sidebar = () => {
             </Link>
           </li>
           <li>
-            <a href="#" className="nav-link text-white">
+            <Link to='/notificaciones' className="nav-link text-white">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#grid" />
               </svg>
               Notificaciones
-            </a>
+            </Link>
           </li>
           <li>
             <Link to='/customers' className="nav-link text-white">
@@ -83,6 +81,9 @@ const Sidebar = () => {
         </Route>
         <Route path='/dashboard'>
           <WeatherComponent/>
+        </Route>
+        <Route path='/notificaciones'>
+          <EarthquakeMap/>
         </Route>
         <Route path='/'>
           <MapComponent/>
