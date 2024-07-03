@@ -60,9 +60,7 @@ const WeatherTable = () => {
           <thead className="thead-dark">
             <tr>
               <th>Fecha y Hora</th>
-              <th>Precipitation</th>
-              <th>Snowfall</th>
-              <th>Snow Depth</th>
+              <th>Precipitación de nieve</th>
             </tr>
           </thead>
           <tbody>
@@ -70,8 +68,6 @@ const WeatherTable = () => {
               <tr key={time}>
                 <td>{time}</td>
                 <td>{weatherData?.hourly.precipitation[index]}</td>
-                <td>{weatherData?.hourly.snowfall[index]}</td>
-                <td>{weatherData?.hourly.snow_depth[index]}</td>
               </tr>
             ))}
           </tbody>

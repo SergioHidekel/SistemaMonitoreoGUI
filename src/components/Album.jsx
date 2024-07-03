@@ -34,10 +34,7 @@ const Album = () => {
                       <div className="card-body">
                         <p className="card-text">Popocatepetl. Se muestra la información de disminución de nieve en los últimos 10 años y nivel de temperatura.</p>
                         <div className="d-flex justify-content-between align-items-center">
-                          <div className="btn-group">
-                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
-                          </div>
+
                           <small className="text-body-secondary">Zona 1</small>
                         </div>
                       </div>
@@ -50,10 +47,7 @@ const Album = () => {
                       <div className="card-body">
                         <p className="card-text">Iztaccihuatl. Muestra la concentración de dióxido de carbono en la zona, ácido sulfúrico y niveles de temperatura.</p>
                         <div className="d-flex justify-content-between align-items-center">
-                          <div className="btn-group">
-                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
-                          </div>
+
                           <small className="text-body-secondary">Zona 2</small>
                         </div>
                       </div>
@@ -67,8 +61,7 @@ const Album = () => {
                         <p className="card-text">Pico de Orizaba. Se muestra información sobre la actividad sísmica de la zona y el histórico en general.</p>
                         <div className="d-flex justify-content-between align-items-center">
                           <div className="btn-group">
-                            <button type="button" className="btn btn-sm btn-outline-secondary">View</button>
-                            <button type="button" className="btn btn-sm btn-outline-secondary">Edit</button>
+
                           </div>
                           <small className="text-body-secondary">Zona 3</small>
                         </div>

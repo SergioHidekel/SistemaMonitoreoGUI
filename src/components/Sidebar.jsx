@@ -6,6 +6,7 @@ import WeatherMap from './WeatherMap'
 import WeatherTable from './WeatherTable'
 import EarthquakeMap from './EarthquakeMap'
 import Album from './Album';
+import Acido from './Acido'
 
 
 
@@ -61,6 +62,14 @@ const Sidebar = () => {
               </svg>
               Histórico Sismológico
             </Link>
+            <li>
+            <Link to='/niveles' className="nav-link text-white">
+              <svg className="bi pe-none me-2" width="16" height="16">
+                <use xlinkHref="#people-circle" />
+              </svg>
+              Niveles
+            </Link>
+          </li>
           </li>
         </ul>
         <hr />
@@ -76,6 +85,9 @@ const Sidebar = () => {
       <Switch>
         <Route path='/historico'>
           <WeatherTable/>
+        </Route>
+        <Route path='/niveles'>
+          <Acido/>
         </Route>
         <Route path='/mapa'>
           <MapComponent/>
