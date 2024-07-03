@@ -51,7 +51,7 @@ const WeatherTable = () => {
 
   return (
     <div className="container mt-5">
-      <h2 className="text-center mb-4">Análisis de nieve en la zona 1</h2>
+      <h2 className="text-center mb-4">Análisis de nieve en la Zona: 1</h2>
       <div className="text-center mb-4">
         <button className="btn btn-primary" onClick={handleDownloadPDF}>Download PDF</button>
       </div>

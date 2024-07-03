@@ -1,9 +1,8 @@
-import Sidebar from './components/Sidebar';
 import './App.css';
+import Sidebar from './components/Sidebar';
 
 
 function App() {
-
   return (
     <div className="App" style={{ display: 'flex' }}>
       <Sidebar/>
@@ -13,7 +12,3 @@ function App() {
 
 export default App;
 
-/* 
-      <Sidebar/>
-      <EarthquakeList/>          
-*/

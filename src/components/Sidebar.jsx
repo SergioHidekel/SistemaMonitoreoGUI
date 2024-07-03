@@ -5,6 +5,7 @@ import WeatherComponent from './WeatherComponent';
 import WeatherMap from './WeatherMap'
 import WeatherTable from './WeatherTable'
 import EarthquakeMap from './EarthquakeMap'
+import Album from './Album';
 
 
 
@@ -22,11 +23,11 @@ const Sidebar = () => {
         <hr />
         <ul className="nav nav-pills flex-column mb-auto">
           <li className="nav-item">
-        <Link to="/" className="nav-link text-white" aria-current="page">
+        <Link to="/mapa" className="nav-link text-white" aria-current="page">
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="./MapComponent.jsx" />
               </svg>
-              Home
+              Mapa
         </Link>
           </li>   
           <li>
@@ -50,7 +51,7 @@ const Sidebar = () => {
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#grid" />
               </svg>
-              Notificaciones
+              Información Sismológica
             </Link>
           </li>
           <li>
@@ -58,7 +59,7 @@ const Sidebar = () => {
               <svg className="bi pe-none me-2" width="16" height="16">
                 <use xlinkHref="#people-circle" />
               </svg>
-              Customers
+              Histórico Sismológico
             </Link>
           </li>
         </ul>
@@ -76,6 +77,9 @@ const Sidebar = () => {
         <Route path='/historico'>
           <WeatherTable/>
         </Route>
+        <Route path='/mapa'>
+          <MapComponent/>
+        </Route>
         <Route path='/customers'>
           <WeatherMap/>
         </Route>
@@ -86,7 +90,7 @@ const Sidebar = () => {
           <EarthquakeMap/>
         </Route>
         <Route path='/'>
-          <MapComponent/>
+          <Album/>
         </Route>
       </Switch>
     </Router>
